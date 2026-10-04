@@ -1,0 +1,934 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&display=swap");
+@import "tailwindcss";
+
+:root {
+  color: #171714;
+  background: #171714;
+  font-family: "Barlow Condensed", sans-serif;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 3px solid #2b7cff;
+  outline-offset: 4px;
+}
+
+.poster-site {
+  --ink: #171714;
+  --paper: #e9dfc7;
+  --red: #e83b22;
+  --yellow: #efb91e;
+  background-color: var(--paper);
+  background-image: radial-gradient(#17171418 0.6px, transparent 0.7px);
+  background-size: 5px 5px;
+  color: var(--ink);
+  overflow: hidden;
+}
+
+.poster-header {
+  position: relative;
+  z-index: 20;
+}
+
+.poster-nav {
+  align-items: center;
+  border-bottom: 3px solid var(--ink);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  height: 82px;
+  padding: 0 3.5vw;
+  text-transform: uppercase;
+}
+
+.poster-mark {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 30px;
+  letter-spacing: -0.11em;
+}
+
+.poster-mark span {
+  color: var(--red);
+}
+
+.poster-nav-links {
+  display: flex;
+  font-size: 14px;
+  font-weight: 800;
+  gap: 32px;
+  letter-spacing: 0.08em;
+}
+
+.poster-nav-links a:hover {
+  text-decoration: underline 3px var(--red);
+  text-underline-offset: 5px;
+}
+
+.poster-book {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 13px;
+  font-weight: 800;
+  justify-self: end;
+  letter-spacing: 0.08em;
+  padding: 11px 17px;
+}
+
+.poster-book:hover {
+  background: var(--red);
+}
+
+.poster-mobile-links {
+  display: none;
+}
+
+.poster-hero {
+  display: grid;
+  grid-template-columns: 8vw 0.72fr 1.2fr 8vw;
+  grid-template-rows: 38px minmax(210px, 1fr) auto 80px;
+  min-height: calc(100vh - 82px);
+  padding-top: 28px;
+  position: relative;
+}
+
+.poster-kicker {
+  font-size: 12px;
+  font-weight: 800;
+  grid-column: 2 / 4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.poster-title {
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(88px, 13.6vw, 210px);
+  font-weight: 400;
+  grid-column: 1 / 5;
+  grid-row: 2;
+  letter-spacing: -0.095em;
+  line-height: 0.71;
+  margin: 0;
+  padding-top: 1.5vw;
+  position: relative;
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+.poster-title span {
+  display: block;
+  white-space: nowrap;
+}
+
+.poster-title span:first-child {
+  margin-left: 3.6vw;
+}
+
+.poster-title span:last-child {
+  color: var(--red);
+  margin-left: 22vw;
+}
+
+.print-photo {
+  background: var(--red);
+  overflow: hidden;
+  position: relative;
+}
+
+.print-photo::after {
+  background-image: radial-gradient(#161613 1px, transparent 1.5px);
+  background-size: 5px 5px;
+  content: "";
+  inset: 0;
+  mix-blend-mode: multiply;
+  opacity: 0.48;
+  pointer-events: none;
+  position: absolute;
+}
+
+.print-photo img {
+  filter: grayscale(1) contrast(1.35);
+  height: 100%;
+  mix-blend-mode: multiply;
+  object-fit: cover;
+  width: 100%;
+}
+
+.poster-photo {
+  border: 4px solid var(--ink);
+  grid-column: 3 / 5;
+  grid-row: 2 / 4;
+  height: 39vw;
+  max-height: 610px;
+  min-height: 390px;
+  transform: rotate(2deg) translate(2vw, 1vw);
+}
+
+.poster-side-note {
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 700;
+  grid-column: 1;
+  grid-row: 2 / 4;
+  justify-self: center;
+  letter-spacing: 0.05em;
+  margin: 180px 0 0;
+  text-transform: uppercase;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  white-space: nowrap;
+}
+
+.poster-burst {
+  align-items: center;
+  aspect-ratio: 1;
+  background: var(--yellow);
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  grid-column: 3;
+  grid-row: 2;
+  justify-content: center;
+  justify-self: end;
+  margin-right: -2vw;
+  margin-top: 35px;
+  transform: rotate(11deg);
+  width: 118px;
+  z-index: 5;
+}
+
+.poster-burst span {
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 0.8;
+}
+
+.poster-burst small {
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.poster-manifesto {
+  font-size: clamp(25px, 2.3vw, 38px);
+  font-weight: 700;
+  grid-column: 2;
+  grid-row: 3;
+  line-height: 1.02;
+  margin: 20px 4vw 0 0;
+  max-width: 420px;
+}
+
+.poster-cta {
+  align-items: center;
+  align-self: end;
+  border-bottom: 3px solid var(--ink);
+  display: flex;
+  font-size: 15px;
+  font-weight: 900;
+  gap: 18px;
+  grid-column: 2;
+  grid-row: 4;
+  justify-content: space-between;
+  letter-spacing: 0.06em;
+  margin-right: 7vw;
+  padding: 16px 0 8px;
+  text-transform: uppercase;
+}
+
+.poster-cta span {
+  color: var(--red);
+}
+
+.poster-strip {
+  background: var(--ink);
+  color: var(--paper);
+  display: flex;
+  font-size: clamp(18px, 2vw, 30px);
+  font-weight: 800;
+  gap: 4vw;
+  letter-spacing: 0.03em;
+  overflow: hidden;
+  padding: 18px 4vw;
+  text-transform: uppercase;
+  transform: rotate(-1deg) scale(1.02);
+  white-space: nowrap;
+}
+
+.poster-strip span {
+  color: var(--yellow);
+}
+
+.poster-strip a:hover {
+  color: var(--red);
+}
+
+.section-stamp {
+  align-items: center;
+  display: flex;
+  gap: 13px;
+}
+
+.section-stamp > span {
+  align-items: center;
+  background: var(--red);
+  border-radius: 50%;
+  color: var(--paper);
+  display: flex;
+  font-size: 13px;
+  font-weight: 900;
+  height: 45px;
+  justify-content: center;
+  width: 45px;
+}
+
+.section-stamp p {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.band-intro {
+  display: grid;
+  gap: 6vw;
+  grid-template-columns: 0.45fr 1fr 0.7fr;
+  padding: 140px 8vw 100px;
+}
+
+.band-heading h2,
+.media-head h2,
+.concert-copy h2,
+.poster-footer h2 {
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(58px, 7vw, 106px);
+  font-weight: 400;
+  letter-spacing: -0.075em;
+  line-height: 0.84;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.band-heading > p {
+  font-size: 22px;
+  line-height: 1.3;
+  margin: 42px 0 0;
+  max-width: 550px;
+}
+
+.band-intro blockquote {
+  border-top: 5px solid var(--red);
+  font-size: clamp(22px, 2.2vw, 34px);
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 0;
+  padding-top: 18px;
+}
+
+.member-wall {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  padding: 0 5vw 150px;
+  position: relative;
+}
+
+.member {
+  position: relative;
+}
+
+.member-1 {
+  grid-column: 1 / 5;
+  grid-row: 1;
+  transform: rotate(-2deg);
+}
+
+.member-2 {
+  grid-column: 5 / 9;
+  grid-row: 1;
+  margin-top: 80px;
+  transform: rotate(1.5deg);
+  z-index: 2;
+}
+
+.member-3 {
+  grid-column: 9 / 13;
+  grid-row: 1;
+  margin-top: 20px;
+  transform: rotate(-1deg);
+}
+
+.member-4 {
+  grid-column: 3 / 7;
+  grid-row: 2;
+  margin-top: 55px;
+  transform: rotate(2deg);
+}
+
+.member-5 {
+  grid-column: 7 / 11;
+  grid-row: 2;
+  margin-top: 115px;
+  transform: rotate(-2deg);
+}
+
+.member-photo {
+  border: 4px solid var(--ink);
+  height: 30vw;
+  max-height: 440px;
+  min-height: 300px;
+}
+
+.member:nth-child(even) .member-photo {
+  background: var(--yellow);
+}
+
+.member-photo img {
+  object-position: center;
+}
+
+.member-copy {
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  margin: -38px 18px 0;
+  padding: 12px 14px 15px;
+  position: relative;
+  z-index: 3;
+}
+
+.member-copy > span {
+  float: right;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.member-copy h3 {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 30px;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  margin: 0 0 5px;
+  text-transform: uppercase;
+}
+
+.member-copy p {
+  font-size: 13px;
+  font-weight: 800;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.member-copy small {
+  display: block;
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 9px;
+}
+
+.media-section {
+  background: var(--ink);
+  color: var(--paper);
+  display: grid;
+  gap: 7vw;
+  grid-template-columns: 0.8fr 1.1fr;
+  min-height: 850px;
+  overflow: hidden;
+  padding: 120px 8vw;
+  position: relative;
+}
+
+.section-stamp-light > span {
+  background: var(--yellow);
+  color: var(--ink);
+}
+
+.media-head {
+  position: relative;
+  z-index: 2;
+}
+
+.media-head h2 {
+  color: var(--red);
+  margin-top: 65px;
+}
+
+.media-head > p {
+  font-size: 24px;
+  line-height: 1.2;
+  margin: 38px 0 0;
+  max-width: 370px;
+}
+
+.media-list {
+  align-self: center;
+  position: relative;
+  z-index: 3;
+}
+
+.missing {
+  border: 1px dashed currentColor;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 8px 10px;
+  text-transform: uppercase;
+}
+
+.media-list > .missing {
+  color: #9d978a;
+  margin-bottom: 28px;
+}
+
+.media-list a {
+  align-items: center;
+  border-top: 1px solid #e9dfc75c;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 35px 1fr auto;
+  padding: 20px 0;
+}
+
+.media-list a:last-child {
+  border-bottom: 1px solid #e9dfc75c;
+}
+
+.media-list a > span {
+  color: #8c887e;
+  font-size: 11px;
+}
+
+.media-list a > strong {
+  font-size: 28px;
+  text-transform: uppercase;
+}
+
+.media-list a > b {
+  color: var(--yellow);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.media-list a:hover strong {
+  color: var(--red);
+}
+
+.media-cutout {
+  bottom: -60px;
+  height: 340px;
+  left: 30vw;
+  opacity: 0.28;
+  position: absolute;
+  transform: rotate(-7deg);
+  width: 300px;
+}
+
+.media-scribble {
+  bottom: 75px;
+  color: var(--yellow);
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 800;
+  left: 8vw;
+  position: absolute;
+  transform: rotate(-5deg);
+}
+
+.concert-section {
+  display: grid;
+  gap: 8vw;
+  grid-template-columns: 1fr 0.8fr;
+  min-height: 700px;
+  padding: 130px 8vw;
+  position: relative;
+}
+
+.concert-copy h2 {
+  color: var(--red);
+  margin-top: 65px;
+}
+
+.concert-board {
+  align-self: center;
+  background: var(--yellow);
+  border: 4px solid var(--ink);
+  box-shadow: 16px 16px 0 var(--red);
+  padding: 55px;
+  transform: rotate(2deg);
+}
+
+.concert-board > p {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 30px;
+}
+
+.concert-board > a {
+  border-bottom: 3px solid var(--ink);
+  display: block;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin-top: 45px;
+  padding-bottom: 9px;
+  text-transform: uppercase;
+}
+
+.concert-aside {
+  bottom: 60px;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 700;
+  left: 8vw;
+  margin: 0;
+  position: absolute;
+  transform: rotate(-2deg);
+}
+
+.poster-footer {
+  background: var(--red);
+  color: var(--paper);
+  padding: 38px 5vw 30px;
+}
+
+.footer-topline {
+  border-bottom: 3px solid var(--paper);
+  display: flex;
+  font-size: 12px;
+  font-weight: 800;
+  justify-content: space-between;
+  letter-spacing: 0.11em;
+  padding-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.footer-main {
+  align-items: end;
+  display: grid;
+  gap: 8vw;
+  grid-template-columns: 1.4fr 0.6fr;
+  padding: 80px 3vw 100px;
+}
+
+.poster-footer h2 {
+  color: var(--ink);
+  font-size: clamp(68px, 10vw, 155px);
+}
+
+.footer-contact p {
+  font-size: 20px;
+  line-height: 1.25;
+  max-width: 320px;
+}
+
+.footer-contact a {
+  border-bottom: 2px solid var(--paper);
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 800;
+  margin-top: 30px;
+  padding-bottom: 7px;
+}
+
+.footer-bottom {
+  align-items: center;
+  border-top: 1px solid #e9dfc782;
+  display: grid;
+  font-size: 11px;
+  grid-template-columns: 1fr auto 1fr;
+  letter-spacing: 0.07em;
+  padding-top: 22px;
+  text-transform: uppercase;
+}
+
+.footer-bottom > div {
+  display: flex;
+  gap: 25px;
+}
+
+.footer-bottom > a {
+  justify-self: end;
+}
+
+.footer-bottom a:hover {
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .poster-nav {
+    grid-template-columns: 1fr auto;
+    height: 66px;
+    padding: 0 18px;
+  }
+
+  .poster-nav-links {
+    display: none;
+  }
+
+  .poster-mark {
+    font-size: 25px;
+  }
+
+  .poster-book {
+    font-size: 10px;
+    padding: 9px 11px;
+  }
+
+  .poster-mobile-links {
+    border-bottom: 2px solid var(--ink);
+    display: flex;
+    font-size: 11px;
+    font-weight: 800;
+    justify-content: space-between;
+    letter-spacing: 0.06em;
+    padding: 11px 18px;
+    text-transform: uppercase;
+  }
+
+  .poster-hero {
+    display: block;
+    min-height: 720px;
+    padding: 24px 18px 40px;
+  }
+
+  .poster-kicker {
+    font-size: 10px;
+    max-width: 220px;
+  }
+
+  .poster-title {
+    font-size: clamp(66px, 22vw, 110px);
+    line-height: 0.76;
+    margin: 24px 0 -8px;
+    padding: 0;
+  }
+
+  .poster-title span:first-child {
+    margin-left: 0;
+  }
+
+  .poster-title span:last-child {
+    margin-left: 8vw;
+  }
+
+  .poster-photo {
+    height: 63vw;
+    margin-left: 13vw;
+    max-height: none;
+    min-height: 245px;
+    transform: rotate(2deg);
+    width: calc(100% - 7vw);
+  }
+
+  .poster-side-note {
+    display: none;
+  }
+
+  .poster-burst {
+    margin: -28px 0 0;
+    position: relative;
+    width: 88px;
+  }
+
+  .poster-burst span {
+    font-size: 26px;
+  }
+
+  .poster-burst small {
+    font-size: 11px;
+  }
+
+  .poster-manifesto {
+    font-size: 25px;
+    margin: 18px 0 0 26vw;
+  }
+
+  .poster-cta {
+    margin: 22px 0 0 26vw;
+    padding-top: 8px;
+  }
+
+  .poster-strip {
+    font-size: 17px;
+    gap: 28px;
+    overflow-x: auto;
+    padding-left: 20px;
+  }
+
+  .band-intro {
+    display: block;
+    padding: 100px 22px 75px;
+  }
+
+  .band-heading {
+    margin-top: 55px;
+  }
+
+  .band-heading h2,
+  .media-head h2,
+  .concert-copy h2 {
+    font-size: 54px;
+  }
+
+  .band-heading > p {
+    font-size: 20px;
+  }
+
+  .band-intro blockquote {
+    font-size: 25px;
+    margin-top: 55px;
+  }
+
+  .member-wall {
+    display: block;
+    padding: 0 22px 100px;
+  }
+
+  .member {
+    margin: 0 0 30px;
+    transform: none;
+  }
+
+  .member:nth-child(even) {
+    margin-left: 8vw;
+  }
+
+  .member:nth-child(odd) {
+    margin-right: 8vw;
+  }
+
+  .member-photo {
+    height: 82vw;
+    max-height: 520px;
+  }
+
+  .member-copy h3 {
+    font-size: 27px;
+  }
+
+  .media-section {
+    display: block;
+    min-height: 940px;
+    padding: 80px 22px 130px;
+  }
+
+  .media-head h2 {
+    margin-top: 50px;
+  }
+
+  .media-head > p {
+    font-size: 21px;
+  }
+
+  .media-list {
+    margin-top: 70px;
+  }
+
+  .media-list a {
+    gap: 10px;
+    grid-template-columns: 25px 1fr auto;
+  }
+
+  .media-list a > strong {
+    font-size: 21px;
+  }
+
+  .media-list a > b {
+    font-size: 10px;
+  }
+
+  .media-cutout {
+    height: 240px;
+    left: auto;
+    right: -30px;
+    width: 210px;
+  }
+
+  .media-scribble {
+    bottom: 55px;
+    left: 22px;
+  }
+
+  .concert-section {
+    display: block;
+    min-height: 790px;
+    padding: 90px 22px 130px;
+  }
+
+  .concert-copy h2 {
+    margin-top: 50px;
+  }
+
+  .concert-board {
+    box-shadow: 10px 10px 0 var(--red);
+    margin: 65px 6px 0 0;
+    padding: 34px 28px;
+  }
+
+  .concert-board > p {
+    font-size: 22px;
+  }
+
+  .concert-aside {
+    bottom: 55px;
+    left: 22px;
+    max-width: 260px;
+  }
+
+  .poster-footer {
+    padding: 25px 18px;
+  }
+
+  .footer-main {
+    display: block;
+    padding: 65px 0 80px;
+  }
+
+  .poster-footer h2 {
+    font-size: 19vw;
+  }
+
+  .footer-contact {
+    margin-top: 55px;
+  }
+
+  .footer-contact a {
+    font-size: 14px;
+  }
+
+  .footer-bottom {
+    display: block;
+    line-height: 1.5;
+  }
+
+  .footer-bottom > div {
+    flex-wrap: wrap;
+    margin: 25px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

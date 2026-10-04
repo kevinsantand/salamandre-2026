@@ -1,0 +1,10 @@
+{
+  "description": "Explore a vibrant web platform for Salamandre, a French rock band, showcasing their music, live performances, and upcoming concerts with a unique artistic flair.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
