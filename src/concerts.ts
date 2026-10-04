@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 
-// Lien « Publier sur le Web » (format CSV) de la Google Sheet des concerts.
+// Google Sheet des concerts (partagée « toute personne disposant du lien »).
 // Colonnes : date | ville | lieu | lien (billetterie, facultatif)
-export const CONCERTS_CSV_URL = ""
+export const CONCERTS_CSV_URL =
+  "https://docs.google.com/spreadsheets/d/1hSgWF6euXXSCRvn7IApnrBq5WAx_s_Ry4i7FIqGIpmE/gviz/tq?tqx=out:csv"
 
 export type Concert = {
   date: Date
@@ -51,6 +52,12 @@ function parseDate(value: string): Date | null {
   return null
 }
 
+function normalizeUrl(value: string): string {
+  const v = value.trim()
+  if (!v) return ""
+  return /^https?:\/\//i.test(v) ? v : `https://${v}`
+}
+
 export function useConcerts() {
   const [concerts, setConcerts] = useState<Concert[]>([])
 
@@ -65,7 +72,7 @@ export function useConcerts() {
         const list = parseCsv(text)
           .map(([d = "", city = "", venue = "", url = ""]) => {
             const date = parseDate(d)
-            return date ? { date, city: city.trim(), venue: venue.trim(), url: url.trim() } : null
+            return date ? { date, city: city.trim(), venue: venue.trim(), url: normalizeUrl(url) } : null
           })
           .filter((c): c is Concert => c !== null && c.date >= today)
           .sort((a, b) => a.date.getTime() - b.date.getTime())

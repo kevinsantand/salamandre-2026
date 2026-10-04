@@ -210,7 +210,7 @@ export default function App() {
               {concerts.map((c) => {
                 const content = (
                   <>
-                    <time dateTime={c.date.toISOString().slice(0, 10)}>
+                    <time dateTime={c.date.toLocaleDateString("sv-SE")}>
                       <b>{c.date.toLocaleDateString("fr-FR", { day: "2-digit" })}</b>
                       {c.date
                         .toLocaleDateString("fr-FR", { month: "short", year: "2-digit" })
