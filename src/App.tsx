@@ -41,10 +41,6 @@ const members = [
   },
 ]
 
-function Missing({ children }: { children: React.ReactNode }) {
-  return <span className="missing">{children}</span>
-}
-
 export default function App() {
   return (
     <main className="poster-site">
@@ -165,7 +161,6 @@ export default function App() {
           </p>
         </div>
         <div className="media-list">
-          <Missing>Titres et pochettes à fournir</Missing>
           <a href={links.spotify} target="_blank" rel="noopener noreferrer">
             <span>01</span>
             <strong>Spotify</strong>
@@ -207,7 +202,6 @@ export default function App() {
         </div>
         <div className="concert-board">
           <p>La programmation sera affichée ici dès qu’elle sera confirmée.</p>
-          <Missing>Dates, villes et billetteries à fournir</Missing>
           <a href={links.contact}>Programmer Salamandre ↗</a>
         </div>
         <p className="concert-aside">

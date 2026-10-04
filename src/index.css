@@ -472,21 +472,6 @@ a:focus-visible {
   z-index: 3;
 }
 
-.missing {
-  border: 1px dashed currentColor;
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  padding: 8px 10px;
-  text-transform: uppercase;
-}
-
-.media-list > .missing {
-  color: #9d978a;
-  margin-bottom: 28px;
-}
-
 .media-list a {
   align-items: center;
   border-top: 1px solid #e9dfc75c;
