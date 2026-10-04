@@ -568,6 +568,62 @@ a:focus-visible {
   text-transform: uppercase;
 }
 
+.concert-list {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.concert-list li {
+  border-top: 2px solid var(--ink);
+}
+
+.concert-list li > a,
+.concert-list li > div {
+  align-items: center;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 70px 1fr auto;
+  padding: 14px 0;
+}
+
+.concert-list time {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.concert-list time b {
+  display: block;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.concert-list strong {
+  display: block;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.concert-list small {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.concert-list em {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .concert-aside {
   bottom: 60px;
   font-size: 15px;

@@ -3,6 +3,7 @@ import gillesPhoto from "./assets/salamandre/gilles.jpg"
 import geraldPhoto from "./assets/salamandre/gerald.jpg"
 import stephanePhoto from "./assets/salamandre/stephane.jpg"
 import mathieuPhoto from "./assets/salamandre/mathieu.jpg"
+import { useConcerts } from "./concerts"
 
 const links = {
   youtube: "https://www.youtube.com/@SalamandreRock",
@@ -42,6 +43,7 @@ const members = [
 ]
 
 export default function App() {
+  const concerts = useConcerts()
   return (
     <main className="poster-site">
       <header className="poster-header">
@@ -201,7 +203,41 @@ export default function App() {
           </h2>
         </div>
         <div className="concert-board">
-          <p>La programmation sera affichée ici dès qu’elle sera confirmée.</p>
+          {concerts.length === 0 ? (
+            <p>La programmation sera affichée ici dès qu’elle sera confirmée.</p>
+          ) : (
+            <ul className="concert-list">
+              {concerts.map((c) => {
+                const content = (
+                  <>
+                    <time dateTime={c.date.toISOString().slice(0, 10)}>
+                      <b>{c.date.toLocaleDateString("fr-FR", { day: "2-digit" })}</b>
+                      {c.date
+                        .toLocaleDateString("fr-FR", { month: "short", year: "2-digit" })
+                        .replace(".", "")}
+                    </time>
+                    <span>
+                      <strong>{c.city}</strong>
+                      {c.venue && <small>{c.venue}</small>}
+                    </span>
+                    {c.url && <em>Billets ↗</em>}
+                  </>
+                )
+                const key = c.date.getTime() + c.city + c.venue
+                return (
+                  <li key={key}>
+                    {c.url ? (
+                      <a href={c.url} target="_blank" rel="noopener noreferrer">
+                        {content}
+                      </a>
+                    ) : (
+                      <div>{content}</div>
+                    )}
+                  </li>
+                )
+              })}
+            </ul>
+          )}
           <a href={links.contact}>Programmer Salamandre ↗</a>
         </div>
         <p className="concert-aside">
