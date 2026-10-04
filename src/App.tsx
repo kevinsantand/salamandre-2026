@@ -122,7 +122,7 @@ export default function App() {
             Mais appliqués.
           </h2>
           <p>
-            Cinq musiciens, des mots en français et un goût prononcé pour le jeu
+            Quatre musiciens, des mots en français et un goût prononcé pour le jeu
             en direct. Une espèce en voie d’extinction, mais assumée.
           </p>
         </div>
