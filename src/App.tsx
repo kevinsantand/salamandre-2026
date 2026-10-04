@@ -97,17 +97,17 @@ export default function App() {
           Une poignée de chanson, une sauce cuivrée et de la dérision servie
           très fort.
         </p>
-        <a className="poster-cta" href={links.youtube}>
+        <a className="poster-cta" href={links.youtube} target="_blank" rel="noopener noreferrer">
           Voir le groupe en action <span>▶</span>
         </a>
       </section>
 
       <section className="poster-strip" aria-label="Liens d’écoute">
         <span>Branchez ici →</span>
-        <a href={links.spotify}>Spotify</a>
-        <a href={links.deezer}>Deezer</a>
-        <a href={links.youtube}>YouTube</a>
-        <a href={links.soundcloud}>SoundCloud</a>
+        <a href={links.spotify} target="_blank" rel="noopener noreferrer">Spotify</a>
+        <a href={links.deezer} target="_blank" rel="noopener noreferrer">Deezer</a>
+        <a href={links.youtube} target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href={links.soundcloud} target="_blank" rel="noopener noreferrer">SoundCloud</a>
       </section>
 
       <section className="band-intro" id="groupe">
@@ -166,22 +166,22 @@ export default function App() {
         </div>
         <div className="media-list">
           <Missing>Titres et pochettes à fournir</Missing>
-          <a href={links.spotify}>
+          <a href={links.spotify} target="_blank" rel="noopener noreferrer">
             <span>01</span>
             <strong>Spotify</strong>
             <b>Écouter ↗</b>
           </a>
-          <a href={links.deezer}>
+          <a href={links.deezer} target="_blank" rel="noopener noreferrer">
             <span>02</span>
             <strong>Deezer</strong>
             <b>Écouter ↗</b>
           </a>
-          <a href={links.youtube}>
+          <a href={links.youtube} target="_blank" rel="noopener noreferrer">
             <span>03</span>
             <strong>YouTube</strong>
             <b>Regarder ↗</b>
           </a>
-          <a href={links.soundcloud}>
+          <a href={links.soundcloud} target="_blank" rel="noopener noreferrer">
             <span>04</span>
             <strong>SoundCloud</strong>
             <b>Écouter ↗</b>
@@ -234,9 +234,9 @@ export default function App() {
         <div className="footer-bottom">
           <p>Salamandre · Rock en français, sauce cuivrée</p>
           <div>
-            <a href={links.instagram}>Instagram</a>
-            <a href={links.facebook}>Facebook</a>
-            <a href={links.youtube}>YouTube</a>
+            <a href={links.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href={links.facebook} target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href={links.youtube} target="_blank" rel="noopener noreferrer">YouTube</a>
           </div>
           <a href="#accueil">Retour en haut ↑</a>
         </div>
