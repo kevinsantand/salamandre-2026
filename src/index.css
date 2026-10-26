@@ -80,10 +80,9 @@ a:focus-visible {
 }
 
 .poster-mark {
-  background: #000;
   display: block;
-  height: 62px;
-  width: 62px;
+  height: 58px;
+  width: 58px;
 }
 
 .poster-mark img {
