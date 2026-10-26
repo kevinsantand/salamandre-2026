@@ -175,8 +175,7 @@ export default function App() {
               le son.
             </h2>
             <p>
-              À écouter chez soi. À regarder de près. À vivre beaucoup trop près
-              de la scène.
+              À écouter chez soi. À voir sur scène.
             </p>
           </div>
           <div className="media-list">
@@ -226,6 +225,17 @@ export default function App() {
           <div className="footer-contact">
             <p>Concert, festival, média ou simplement un petit mot :</p>
             <a href={links.contact}>groupe@salamandrerock.com ↗</a>
+            <p className="footer-dates">
+              Toutes nos dates sont sur{" "}
+              <a href={links.instagram} target="_blank" rel="noopener noreferrer">
+                Instagram
+              </a>{" "}
+              et{" "}
+              <a href={links.facebook} target="_blank" rel="noopener noreferrer">
+                Facebook
+              </a>
+              .
+            </p>
           </div>
         </div>
         <div className="footer-bottom">

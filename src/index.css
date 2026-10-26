@@ -81,8 +81,8 @@ a:focus-visible {
 
 .poster-mark {
   display: block;
-  height: 58px;
-  width: 58px;
+  height: 72px;
+  width: 72px;
 }
 
 .poster-mark img {
@@ -703,6 +703,31 @@ a:focus-visible {
   padding-bottom: 7px;
 }
 
+.footer-contact .footer-dates {
+  border-left: 5px solid var(--yellow);
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-top: 34px;
+  max-width: 360px;
+  padding-left: 16px;
+  text-transform: uppercase;
+}
+
+.footer-contact .footer-dates a {
+  border-bottom: 3px solid var(--yellow);
+  color: var(--yellow);
+  display: inline;
+  font-size: inherit;
+  margin-top: 0;
+  padding-bottom: 0;
+}
+
+.footer-contact .footer-dates a:hover {
+  background: var(--yellow);
+  color: var(--ink);
+}
+
 .footer-bottom {
   align-items: center;
   border-top: 1px solid #e9dfc782;
@@ -739,8 +764,8 @@ a:focus-visible {
   }
 
   .poster-mark {
-    height: 52px;
-    width: 52px;
+    height: 58px;
+    width: 58px;
   }
 
   .poster-book {
@@ -780,7 +805,7 @@ a:focus-visible {
   }
 
   .poster-title {
-    font-size: calc((100vw - 36px) / 6.9);
+    font-size: calc((100vw - 36px) / 7.6);
     line-height: 0.8;
     margin: 24px 0 18px;
     padding: 0;
