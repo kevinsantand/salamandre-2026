@@ -2,6 +2,7 @@ import groupPhoto from "./assets/salamandre/img-groupe-salamandre.jpg"
 import gillesPhoto from "./assets/salamandre/gilles.jpg"
 import geraldPhoto from "./assets/salamandre/gerald.jpg"
 import stephanePhoto from "./assets/salamandre/stephane.jpg"
+import logo from "./assets/salamandre/logo.png"
 import mathieuPhoto from "./assets/salamandre/mathieu.jpg"
 
 const links = {
@@ -54,7 +55,7 @@ export default function App() {
             href="#accueil"
             aria-label="Salamandre, accueil"
           >
-            S<span>A</span>L
+            <img src={logo} alt="" />
           </a>
           <div className="poster-nav-links">
             <a href="#groupe">Le groupe</a>
