@@ -28,8 +28,6 @@ jobs:
           cache: pnpm
       - run: pnpm install --no-frozen-lockfile
       - run: pnpm build
-        env:
-          FIGMA_PUBLIC_URL: /${{ github.event.repository.name }}
       - run: cp dist/index.html dist/404.html
       - uses: actions/upload-pages-artifact@v3
         with:
